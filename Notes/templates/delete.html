@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+       <h1> <tr><td>Title</td>
+        <td>Date</td>
+        <td>About</td></tr></thead>
+        {% for i in result %}
+    <tr>
+        <td>{{ i.Title }}</td>
+        <td>{{ i.Date }}</td>
+        <td>{{ i.Description }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <form method="POST"> {% csrf_token %}
+    <label for="id1">Title :</label>
+    <input type="text" name="title" id="id1" placeholder="enter title" required></form>
+</html>
